@@ -57,8 +57,10 @@ namespace emlViewer.ViewModels
 
                 foreach (string line in lines)
                 {
+                    if (line == "") break;
+
                     if (line[0] == ' ') {
-                         text[text.Count - 1] += $" {line}";
+                         text.Insert(text.Count - 1, $" {line}");
                     } else {
                         text.Add(line);
                     }
