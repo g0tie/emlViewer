@@ -33,6 +33,7 @@ namespace emlViewer.ViewModels
             }
 
             checkFileExtension(FileToOpen);
+            parseFile(FileToOpen);
         }
 
         private void checkFileExtension(string filePath)
@@ -47,22 +48,20 @@ namespace emlViewer.ViewModels
             Console.WriteLine(filePath);
         }
 
-        public void parseFile()
+        public void parseFile(string filePath)
         {
              try
             {
              
-                string[] lines = System.IO.File.ReadAllLines(FileToOpen);
+                string[] lines = System.IO.File.ReadAllLines(filePath);
 
-                // Display the file contents by using a foreach loop.
                 foreach (string line in lines)
                 {
-                    // if (line[0] == " ") {
-                    //     text[text.Count - 1] += $" {line}";
-                    // } else {
-                    //     text.Add(line);
-                    // }
-
+                    if (line[0] == ' ') {
+                         text[text.Count - 1] += $" {line}";
+                    } else {
+                        text.Add(line);
+                    }
                 }
             }
             catch (IOException e)
