@@ -14,17 +14,26 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+
      <StackPanel>
      
         <Button
             Command="{Binding openFile}" 
             CommandParameter="{Binding ElementName=MainWindow}"
         >Ouvrir un fichier EML</Button>
+    
 
-            
+        <Grid
+            RowDefinitions="Auto"
+            ColumnDefinitions="500,Auto"
+        >
+        <ScrollViewer
+            Grid.Row="0"
+            Grid.Column="0"
+        >
             <Grid
             RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
-            ColumnDefinitions="200,Auto"
+            ColumnDefinitions="100,Auto"
             Margin="5"
             >
                 <TextBlock 
@@ -35,7 +44,8 @@
                 <TextBlock 
                 Grid.Row="0" 
                 Grid.Column="1" 
-                Margin="0,15" Name="from"></TextBlock>
+                Margin="0,15"
+                Text="{Binding From, Mode=TwoWay}"></TextBlock>
 
 
                 <TextBlock 
@@ -46,17 +56,20 @@
                 <TextBlock 
                 Grid.Row="1" 
                 Grid.Column="1" 
-                Margin="0,15" Name="to"></TextBlock>
+                Margin="0,15"
+                Text="{Binding To, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
                 Grid.Row="2" 
                 Grid.Column="0" 
-                Margin="0,15" FontWeight="Bold">CC:</TextBlock>
+                Margin="0,15" FontWeight="Bold"
+                >CC:</TextBlock>
 
                 <TextBlock 
                 Grid.Row="2" 
                 Grid.Column="1" 
-                Margin="0,15" Name="cc"></TextBlock>
+                Margin="0,15" 
+                Text="{Binding Cc, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
                 Grid.Row="3" 
@@ -66,7 +79,8 @@
                 <TextBlock 
                 Grid.Row="3" 
                 Grid.Column="1" 
-                Margin="0,15" Name="subject"></TextBlock>
+                Margin="0,15"
+                Text="{Binding Subject, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
                 Grid.Row="4" 
@@ -76,69 +90,91 @@
                 <TextBlock 
                 Grid.Row="4" 
                 Grid.Column="1" 
-                Margin="0,15" Name="date"></TextBlock>
+                Margin="0,15" 
+                Text="{Binding Date, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
-                Grid.Row="4" 
+                Grid.Row="5" 
                 Grid.Column="0" 
                 Margin="0,15" FontWeight="Bold">Received:</TextBlock>
 
                 <TextBlock 
-                Grid.Row="4" 
+                Grid.Row="5" 
                 Grid.Column="1" 
-                Margin="0,15" Name="received"></TextBlock>
+                Margin="0,15" 
+                TextWrapping="1"
+                Text="{Binding Received, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
-                Grid.Row="5" 
+                Grid.Row="6" 
                 Grid.Column="0" 
                 Margin="0,15" FontWeight="Bold">MIME Version:</TextBlock>
 
                 <TextBlock 
-                Grid.Row="5" 
+                Grid.Row="6" 
                 Grid.Column="1" 
-                Margin="0,15" Name="mimeVersion"></TextBlock>
+                Margin="0,15"
+                Text="{Binding MimeVersion, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
-                Grid.Row="6" 
+                Grid.Row="7" 
                 Grid.Column="0" 
                 Margin="0,15" FontWeight="Bold">Content-Type:</TextBlock>
 
                 <TextBlock 
-                Grid.Row="6" 
-                Grid.Column="1" 
-                Margin="0,15" Name="contentType"></TextBlock>
-
-                 <TextBlock 
                 Grid.Row="7" 
+                Grid.Column="1" 
+                Margin="0,15" 
+                Text="{Binding ContentType, Mode=TwoWay}"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="8" 
                 Grid.Column="0" 
                 Margin="0,15" FontWeight="Bold">MessageID:</TextBlock>
 
                 <TextBlock 
-                Grid.Row="7" 
-                Grid.Column="1" 
-                Margin="0,15" Name="messageId"></TextBlock>
-
-                <TextBlock 
-                Grid.Row="8" 
-                Grid.Column="0" 
-                Margin="0,15" FontWeight="Bold">Body:</TextBlock>
-
-                <TextBlock 
                 Grid.Row="8" 
                 Grid.Column="1" 
-                Margin="0,15" Name="body"></TextBlock>
+                Margin="0,15" 
+                Text="{Binding MessageID, Mode=TwoWay}"></TextBlock>
 
-                <TextBlock 
-                Grid.Row="9" 
-                Grid.Column="0" 
-                Margin="0,15" FontWeight="Bold">HTML:</TextBlock>
+              
+                </Grid>
 
+            </ScrollViewer>
+
+            <ScrollViewer
+                Grid.Row="0"
+                Grid.Column="1"
+            >
+
+            <Grid
+            RowDefinitions="Auto,Auto"
+            ColumnDefinitions="Auto,Auto"
+            >
                 <TextBlock 
-                Grid.Row="9" 
-                Grid.Column="1" 
-                Margin="0,15" Name="html"></TextBlock>
-            </Grid>
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Margin="0,15" FontWeight="Bold">Body:</TextBlock>
+
+                    <TextBlock 
+                    Grid.Row="0" 
+                    Grid.Column="1" 
+                    Margin="0,15" 
+                    Text="{Binding Body, Mode=TwoWay}"></TextBlock>
+
+                    <TextBlock 
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Margin="0,15" FontWeight="Bold">HTML:</TextBlock>
+
+                    <TextBlock 
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    Margin="0,15"
+                    Text="{Binding Html, Mode=TwoWay}"></TextBlock>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
     </StackPanel>
-
-
 </Window>
