@@ -21,14 +21,123 @@
             CommandParameter="{Binding ElementName=MainWindow}"
         >Ouvrir un fichier EML</Button>
 
-        <Grid
-            RowDefinitions="Auto" 
-            ColumnDefinitions="300,100"
-            Margin="5"    
-        >
             
+            <Grid
+            RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+            ColumnDefinitions="200,Auto"
+            Margin="5"
+            >
+                <TextBlock 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">From:</TextBlock>
 
-        </Grid>
+                <TextBlock 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Margin="0,15" Name="from"></TextBlock>
+
+
+                <TextBlock 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">To:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Margin="0,15" Name="to"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">CC:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                Margin="0,15" Name="cc"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="3" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">Subject:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Margin="0,15" Name="subject"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="4" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">Date:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="4" 
+                Grid.Column="1" 
+                Margin="0,15" Name="date"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="4" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">Received:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="4" 
+                Grid.Column="1" 
+                Margin="0,15" Name="received"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">MIME Version:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="5" 
+                Grid.Column="1" 
+                Margin="0,15" Name="mimeVersion"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="6" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">Content-Type:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="6" 
+                Grid.Column="1" 
+                Margin="0,15" Name="contentType"></TextBlock>
+
+                 <TextBlock 
+                Grid.Row="7" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">MessageID:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="7" 
+                Grid.Column="1" 
+                Margin="0,15" Name="messageId"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="8" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">Body:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="8" 
+                Grid.Column="1" 
+                Margin="0,15" Name="body"></TextBlock>
+
+                <TextBlock 
+                Grid.Row="9" 
+                Grid.Column="0" 
+                Margin="0,15" FontWeight="Bold">HTML:</TextBlock>
+
+                <TextBlock 
+                Grid.Row="9" 
+                Grid.Column="1" 
+                Margin="0,15" Name="html"></TextBlock>
+            </Grid>
     </StackPanel>
 
 

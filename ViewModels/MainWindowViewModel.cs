@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Avalonia.Controls;
 using System.IO;
+using HLIB.MailFormats;
 
 namespace emlViewer.ViewModels
 {
@@ -18,7 +19,7 @@ namespace emlViewer.ViewModels
             } 
         }
 
-        public  List<string> text = new List<string>();
+        // public  List<string> text = new List<string>();
         public async void openFile(Window window)
         {
             var fileDialog = new OpenFileDialog();
@@ -48,30 +49,42 @@ namespace emlViewer.ViewModels
             Console.WriteLine(filePath);
         }
 
+        // public void parseFile(string filePath)
+        // {
+        //      try
+        //     {
+             
+        //         string[] lines = System.IO.File.ReadAllLines(filePath);
+
+        //         foreach (string line in lines)
+        //         {
+        //             if (line == "") break;
+
+        //             if (line[0] == ' ') {
+        //                  text.Insert(text.Count - 1, $" {line}");
+        //             } else {
+        //                 text.Add(line);
+        //             }
+        //         }
+        //     }
+        //     catch (IOException e)
+        //     {
+        //         Console.WriteLine("The file could not be read:");
+        //         Console.WriteLine(e.Message);
+        //     }
+        // }
+
         public void parseFile(string filePath)
         {
-             try
-            {
-             
-                string[] lines = System.IO.File.ReadAllLines(filePath);
+            FileStream fs = File.Open(filePath, FileMode.Open, 
+            FileAccess.ReadWrite);
 
-                foreach (string line in lines)
-                {
-                    if (line == "") break;
+            EMLReader reader = new EMLReader(fs);
+            fs.Close();
 
-                    if (line[0] == ' ') {
-                         text.Insert(text.Count - 1, $" {line}");
-                    } else {
-                        text.Add(line);
-                    }
-                }
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-            }
+
         }
+        
 
     }
 }
