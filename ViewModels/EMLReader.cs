@@ -161,7 +161,6 @@ namespace HLIB.MailFormats
 
                 Debug.WriteLine(sFullValue);
             }
-
             SetFields(list.ToArray());
 
             if (nStartBody == -1)   // no body ?
@@ -252,6 +251,7 @@ namespace HLIB.MailFormats
             //List<string> listUnsupported = new List<string>();
             _listUnsupported = new Dictionary<string, string>();
             List<string> listX_Receiver = new List<string>();
+
             foreach (string sHdr in saLines)
             {
                 string[] saHdr = Split(sHdr);
@@ -312,7 +312,13 @@ namespace HLIB.MailFormats
                     //    Body = saHdr[1];
                     //    break;
                     default:
-                        _listUnsupported.Add(saHdr[0], saHdr[1]);
+                        try {
+                            _listUnsupported.Add(saHdr[0], saHdr[1]);
+
+                        } catch (Exception e) {
+                            Console.WriteLine(e);
+                        }
+                      
                         break;
                 }
             }
