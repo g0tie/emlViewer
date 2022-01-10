@@ -330,7 +330,6 @@ namespace HLIB.MailFormats
                         break;
                 }
             }
-            Console.WriteLine("1");
 
             X_Receivers = new string[listX_Receiver.Count];
             listX_Receiver.CopyTo(X_Receivers);
