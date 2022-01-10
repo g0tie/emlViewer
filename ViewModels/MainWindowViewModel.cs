@@ -75,6 +75,15 @@ namespace emlViewer.ViewModels
             } 
         }
 
+        private string _xreceiver = "";
+        public string XReceiver 
+        {
+            get => _xreceiver;
+            set {
+                _xreceiver =  this.RaiseAndSetIfChanged(ref _xreceiver, value);
+            } 
+        }
+
         private string _mimeVersion = "";
         public string MimeVersion 
         {

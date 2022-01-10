@@ -8,6 +8,7 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="emlViewer"
         x:Name="MainWindow"
+        Width="1200"
         >
 
     <Design.DataContext>
@@ -30,6 +31,7 @@
         <ScrollViewer
             Grid.Row="0"
             Grid.Column="0"
+            Height="800"
         >
             <Grid
             RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
@@ -45,6 +47,8 @@
                 Grid.Row="0" 
                 Grid.Column="1" 
                 Margin="0,15"
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding From, Mode=TwoWay}"></TextBlock>
 
 
@@ -57,6 +61,8 @@
                 Grid.Row="1" 
                 Grid.Column="1" 
                 Margin="0,15"
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding To, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
@@ -69,6 +75,8 @@
                 Grid.Row="2" 
                 Grid.Column="1" 
                 Margin="0,15" 
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding Cc, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
@@ -80,6 +88,8 @@
                 Grid.Row="3" 
                 Grid.Column="1" 
                 Margin="0,15"
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding Subject, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
@@ -91,18 +101,22 @@
                 Grid.Row="4" 
                 Grid.Column="1" 
                 Margin="0,15" 
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding Date, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
                 Grid.Row="5" 
                 Grid.Column="0" 
-                Margin="0,15" FontWeight="Bold">Received:</TextBlock>
+                Margin="0,15" 
+                FontWeight="Bold">Received:</TextBlock>
 
                 <TextBlock 
                 Grid.Row="5" 
                 Grid.Column="1" 
                 Margin="0,15" 
-                TextWrapping="1"
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding Received, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
@@ -114,6 +128,8 @@
                 Grid.Row="6" 
                 Grid.Column="1" 
                 Margin="0,15"
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding MimeVersion, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
@@ -125,6 +141,8 @@
                 Grid.Row="7" 
                 Grid.Column="1" 
                 Margin="0,15" 
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding ContentType, Mode=TwoWay}"></TextBlock>
 
                 <TextBlock 
@@ -136,6 +154,8 @@
                 Grid.Row="8" 
                 Grid.Column="1" 
                 Margin="0,15" 
+                TextWrapping="Wrap"
+                Width="400"
                 Text="{Binding MessageID, Mode=TwoWay}"></TextBlock>
 
               
@@ -146,6 +166,7 @@
             <ScrollViewer
                 Grid.Row="0"
                 Grid.Column="1"
+                Height="800"
             >
 
             <Grid
@@ -161,6 +182,8 @@
                     Grid.Row="0" 
                     Grid.Column="1" 
                     Margin="0,15" 
+                    TextWrapping="Wrap"
+                    Width="400"
                     Text="{Binding Body, Mode=TwoWay}"></TextBlock>
 
                     <TextBlock 
@@ -172,6 +195,8 @@
                     Grid.Row="1" 
                     Grid.Column="1" 
                     Margin="0,15"
+                    TextWrapping="Wrap"
+                    Width="400"
                     Text="{Binding Html, Mode=TwoWay}"></TextBlock>
                 </Grid>
             </ScrollViewer>
