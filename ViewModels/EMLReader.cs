@@ -264,7 +264,11 @@ namespace HLIB.MailFormats
                         X_Sender = saHdr[1];
                         break;
                     case "x-receiver":
-                        listX_Receiver.Add(saHdr[1]);
+                        try {
+                            listX_Receiver.Add(saHdr[1]);
+                        } catch (Exception e) {
+                            Console.WriteLine(e);
+                        }
                         break;
                     case "received":
                         Received = saHdr[1];
@@ -282,7 +286,11 @@ namespace HLIB.MailFormats
                         CC = saHdr[1];
                         break;
                     case "date":
-                        Date = DateTime.Parse(saHdr[1]);
+                     try {
+                            Date = DateTime.Parse(saHdr[1]);
+                        } catch (Exception e) {
+                            Console.WriteLine(e);
+                        }
                         break;
                     case "subject":
                         Subject = saHdr[1];
@@ -322,6 +330,7 @@ namespace HLIB.MailFormats
                         break;
                 }
             }
+            Console.WriteLine("1");
 
             X_Receivers = new string[listX_Receiver.Count];
             listX_Receiver.CopyTo(X_Receivers);
